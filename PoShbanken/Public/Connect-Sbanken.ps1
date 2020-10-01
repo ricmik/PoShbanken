@@ -17,7 +17,6 @@ function Connect-Sbanken {
     $URLEncodedClientID = [System.Web.HTTPUtility]::UrlEncode($ClientID)
     $URLEncodedSecret = [System.Web.HTTPUtility]::UrlEncode($Secret)
     $EncodedAuthString = [Convert]::ToBase64String([System.Text.Encoding]::UTF8.GetBytes($URLEncodedClientID + ':' + $URLEncodedSecret))
-    [System.Text.Encoding]::UTF8.GetString([System.Convert]::FromBase64String($EncodedAuthString))
     $Headers = @{
         'Accept'        = 'application/json'
         'Content-Type'  = 'application/x-www-form-urlencoded'
