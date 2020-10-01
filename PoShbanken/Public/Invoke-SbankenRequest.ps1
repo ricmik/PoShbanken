@@ -11,7 +11,7 @@ function Invoke-SbankenRequest {
     
     begin {
         Write-Verbose "Checking if Connect-Sbanken has been run successfully."
-        if(!$Private:SbankenConnection) {
+        if(!$Script:SbankenConnection) {
             Write-Error "Not connected to Sbanken"
             break
         }
